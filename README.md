@@ -1,4 +1,5 @@
 # 100 Node Js Interview Questions
+
 Node js Questions
 
 ### 1\. What is Node.js and why is it used?
@@ -16,6 +17,7 @@ Node js Questions
 
 **Example:**
 
+```
 const http = require('http');
 
 const server = http.createServer((req, res) => {
@@ -33,6 +35,7 @@ server.listen(3000, '127.0.0.1', () => {
 console.log('Server running at <http://127.0.0.1:3000/>');
 
 });
+```
 
 ### 2\. How does Node.js handle child threads?
 
@@ -3199,4 +3202,3 @@ session.endSession();
 performTransaction();
 
 In this example, MongoDB transaction is implemented using session, startSession(), commitTransaction(), and abortTransaction() methods to insert a new User document into users collection and a new Order document into orders collection within a transactional context, ensuring both operations are atomic and consistent.
-
