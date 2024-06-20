@@ -45,6 +45,7 @@ Node.js is single-threaded by nature, but it uses multiple threads in the backgr
 
 **Example:**
 
+```
 const { exec } = require('child_process');
 
 exec('ls -lh', (error, stdout, stderr) => {
@@ -62,6 +63,7 @@ console.log(\`stdout: ${stdout}\`);
 console.error(\`stderr: ${stderr}\`);
 
 });
+```
 
 ### 3\. Describe the event-driven programming in Node.js
 
@@ -71,6 +73,7 @@ Event-driven programming in Node.js involves the use of events and callbacks. No
 
 **Example:**
 
+```
 const EventEmitter = require('events');class MyEmitter extends EventEmitter {}
 
 const myEmitter = new MyEmitter();
@@ -82,6 +85,7 @@ console.log('An event occurred!');
 });
 
 myEmitter.emit('event');
+```
 
 ### 4\. What is the event loop in Node.js?
 
@@ -91,6 +95,7 @@ The **event loop** is a fundamental part of Node.js's asynchronous architecture.
 
 **Example:**
 
+```
 console.log('Start');
 
 setTimeout(() => {
@@ -116,6 +121,7 @@ StartEnd
 Timeout 2
 
 Timeout 1
+```
 
 ### 5\. What is the difference between Node.js and traditional web server technologies?
 
@@ -143,6 +149,7 @@ In Node.js, "non-blocking" refers to the ability of the system to initiate an I/
 
 **Example:**
 
+```
 const fs = require('fs');
 
 console.log('Start');
@@ -164,6 +171,7 @@ sql
 StartEnd
 
 (file contents)
+```
 
 ### 7\. How do you update Node.js to the latest version?
 
@@ -173,6 +181,7 @@ To update Node.js to the latest version, you can use a version manager like n or
 
 Using nvm (Node Version Manager):
 
+```
 sh
 
 nvm install node # Install the latest version
@@ -188,6 +197,7 @@ sh
 sudo npm install -g n
 
 sudo n latest
+```
 
 ### 8\. What is “npm” and what is it used for?
 
@@ -197,9 +207,11 @@ sudo n latest
 
 **Example:** To install a package:
 
+```
 sh
 
 npm install express
+```
 
 ### 9\. How do you manage packages in a Node.js project?
 
@@ -209,6 +221,7 @@ Packages in a Node.js project are managed using npm. You can install, update, an
 
 **Example:**
 
+```
 Initialize a project and create a package.json file:
 
 sh
@@ -232,6 +245,7 @@ Remove a package:
 sh
 
 npm uninstall express
+```
 
 ### 10\. What is a package.json file?
 
@@ -241,6 +255,7 @@ The package.json file is a manifest file for a Node.js project. It contains meta
 
 **Example:**
 
+```
 json
 
 {
@@ -272,6 +287,7 @@ json
 "license": "ISC"}
 
 ### Node.js Core Modules
+```
 
 ### 11\. Describe some of the core modules of Node.js
 
@@ -290,6 +306,7 @@ Some of the core modules in Node.js include:
 
 **Answer:**
 
+```
 const http = require('http');
 
 const server = http.createServer((req, res) => {
@@ -307,6 +324,7 @@ server.listen(3000, '127.0.0.1', () => {
 console.log('Server running at <http://127.0.0.1:3000/>');
 
 });
+```
 
 ### 13\. Explain the purpose of the File System (fs) module
 
@@ -322,7 +340,9 @@ The Buffer class is used for handling binary data directly in Node.js. It is des
 
 **Example:**
 
+```
 const buffer = Buffer.from('Hello, World!');console.log(buffer.toString()); // 'Hello, World!'
+```
 
 ### 15\. What are streams in Node.js and what types are available?
 
@@ -339,6 +359,7 @@ Streams are objects that let you read data from a source or write data to a dest
 
 **Answer:**
 
+```
 const fs = require('fs');
 
 // Reading a file
@@ -360,11 +381,13 @@ if (err) throw err;
 console.log('File has been saved!');
 
 });
+```
 
 ### 17\. How do you use the EventEmitter in Node.js?
 
 **Answer:**
 
+```
 const EventEmitter = require('events');class MyEmitter extends EventEmitter {}
 
 const myEmitter = new MyEmitter();
@@ -376,6 +399,7 @@ console.log('An event occurred!');
 });
 
 myEmitter.emit('event');
+```
 
 ### 18\. What is the QueryString module?
 
@@ -385,11 +409,13 @@ The querystring module provides utilities for parsing and formatting URL query s
 
 **Example:**
 
+```
 const querystring = require('querystring');
 
 const parsed = querystring.parse('name=John&age=30');console.log(parsed); // { name: 'John', age: '30' }
 
 const formatted = querystring.stringify({ name: 'John', age: 30 });console.log(formatted); // 'name=John&age=30'
+```
 
 ### 19\. How do you manage path operations in Node.js?
 
@@ -399,11 +425,13 @@ The path module provides utilities for working with file and directory paths.
 
 **Example:**
 
+```
 const path = require('path');
 
 const joinedPath = path.join('/foo', 'bar', 'baz/asdf', 'quux', '..');console.log(joinedPath); // '/foo/bar/baz/asdf'
 
 const resolvedPath = path.resolve('foo/bar', '/tmp/file/', '..', 'a/../subfile');console.log(resolvedPath); // '/tmp/subfile'
+```
 
 ### Asynchronous Programming
 
@@ -415,6 +443,7 @@ Callbacks are functions passed as arguments to other functions and are invoked a
 
 **Example:**
 
+```
 const fs = require('fs');
 
 fs.readFile('example.txt', 'utf8', (err, data) => {
@@ -424,6 +453,7 @@ if (err) throw err;
 console.log(data);
 
 });
+```
 
 ### 21\. What is callback hell and how can it be avoided?
 
@@ -437,6 +467,7 @@ console.log(data);
 
 **Example with Promises:**
 
+```
 const fs = require('fs').promises;
 
 fs.readFile('example.txt', 'utf8')
@@ -460,6 +491,7 @@ console.log('File copied successfully.');
 console.error(err);
 
 });
+```
 
 ### 22\. Explain promises in Node.js
 
@@ -469,6 +501,7 @@ Promises are objects representing the eventual completion or failure of an async
 
 **Example:**
 
+```
 const fs = require('fs').promises;
 
 fs.readFile('example.txt', 'utf8')
@@ -484,6 +517,7 @@ console.log(data);
 console.error(err);
 
 });
+```
 
 ### 23\. How do async/await functions work in Node.js?
 
@@ -493,6 +527,7 @@ async and await are syntactic sugar built on top of Promises. They allow writing
 
 **Example:**
 
+```
 const fs = require('fs').promises;
 
 async function readFile() {
@@ -512,6 +547,7 @@ console.error(err);
 }
 
 readFile();
+```
 
 ### 24\. What is the difference between synchronous and asynchronous methods in the fs module?
 
@@ -521,6 +557,7 @@ readFile();
 
 **Example:**
 
+```
 const fs = require('fs');
 
 // Synchronous readconst dataSync = fs.readFileSync('example.txt', 'utf8');console.log(dataSync);
@@ -534,6 +571,7 @@ if (err) throw err;
 console.log(data);
 
 });
+```
 
 ### Networking in Node.js
 
@@ -545,6 +583,7 @@ Node.js handles HTTP requests and responses using the http module. The http.crea
 
 **Example:**
 
+```
 const http = require('http');
 
 const server = http.createServer((req, res) => {
@@ -562,6 +601,7 @@ server.listen(3000, '127.0.0.1', () => {
 console.log('Server running at <http://127.0.0.1:3000/>');
 
 });
+```
 
 ### 26\. What is Express.js and why is it important for Node.js?
 
@@ -571,6 +611,7 @@ console.log('Server running at <http://127.0.0.1:3000/>');
 
 **Example:**
 
+```
 const express = require('express');const app = express();
 
 app.get('/', (req, res) => {
@@ -584,11 +625,13 @@ app.listen(3000, () => {
 console.log('Server running at <http://127.0.0.1:3000/>');
 
 });
+```
 
 ### 27\. How do you create a RESTful API with Node.js?
 
 **Answer:**
 
+```
 const express = require('express');const app = express();
 
 app.use(express.json());
@@ -616,6 +659,7 @@ app.listen(3000, () => {
 console.log('Server running at <http://127.0.0.1:3000/>');
 
 });
+```
 
 ### 28\. What is middleware in the context of Node.js?
 
@@ -625,6 +669,7 @@ Middleware functions are functions that have access to the request object (req),
 
 **Example:**
 
+```
 const express = require('express');const app = express();
 
 app.use((req, res, next) => {
@@ -646,6 +691,7 @@ app.listen(3000, () => {
 console.log('Server running at <http://127.0.0.1:3000/>');
 
 });
+```
 
 ### 29\. How do you ensure security in HTTP headers with Node.js?
 
@@ -655,6 +701,7 @@ You can use middleware like helmet to secure your HTTP headers.
 
 **Example:**
 
+```
 const express = require('express');const helmet = require('helmet');const app = express();
 
 app.use(helmet());
@@ -670,6 +717,7 @@ app.listen(3000, () => {
 console.log('Server running at <http://127.0.0.1:3000/>');
 
 });
+```
 
 ### Error Handling & Debugging
 
@@ -681,6 +729,7 @@ Errors in Node.js can be handled using try/catch blocks for synchronous code and
 
 **Example:**
 
+```
 // Using try/catch for synchronous codetry {
 
 // Code that may throw an error
@@ -722,6 +771,7 @@ console.error(error);
 }
 
 }
+```
 
 ### 31\. Describe some error first callback patterns in Node.js
 
@@ -731,6 +781,7 @@ Error-first callbacks are a standard pattern in Node.js where the first argument
 
 **Example:**
 
+```
 const fs = require('fs');
 
 fs.readFile('example.txt', 'utf8', (err, data) => {
@@ -746,6 +797,7 @@ return;
 console.log(data);
 
 });
+```
 
 ### 32\. What are some common debugging techniques for Node.js applications?
 
@@ -758,9 +810,11 @@ console.log(data);
 
 **Example:**
 
+```
 bash
 
 node inspect script.js
+```
 
 ### 33\. Explain process.nextTick()
 
@@ -770,6 +824,7 @@ process.nextTick() defers the execution of a callback function until the next it
 
 **Example:**
 
+```
 console.log('Start');
 
 process.nextTick(() => {
@@ -779,6 +834,7 @@ console.log('Next Tick');
 });
 
 console.log('End');
+```
 
 ### 34\. What is the global object in Node.js?
 
@@ -788,7 +844,9 @@ The global object in Node.js is global. It provides global properties and functi
 
 **Example:**
 
+```
 console.log(global);
+```
 
 ### Testing in Node.js
 
@@ -805,9 +863,11 @@ Some popular testing frameworks for Node.js are:
 
 **Example:**
 
+```
 bash
 
 npm install mocha chai --save-dev
+```
 
 ### 36\. Explain the concept of mocking in Node.js
 
@@ -817,6 +877,7 @@ Mocking is the process of creating a mock object that simulates the behavior of 
 
 **Example with Sinon.js:**
 
+```
 const sinon = require('sinon');const myModule = require('./myModule');
 
 const mock = sinon.mock(myModule);
@@ -828,6 +889,7 @@ const result = myModule.methodName();console.log(result); // 'mocked value'
 mock.verify();
 
 mock.restore();
+```
 
 ### 37\. Why is benchmarking important in Node.js?
 
@@ -837,11 +899,13 @@ Benchmarking is important to measure the performance of Node.js applications, id
 
 **Example:**
 
+```
 const { performance } = require('perf_hooks');
 
 const start = performance.now();// Code to benchmarkconst end = performance.now();
 
 console.log(\`Execution time: ${end - start} ms\`);
+```
 
 ### 38\. How do you test an HTTP server in Node.js?
 
@@ -851,6 +915,7 @@ You can test an HTTP server using frameworks like Mocha, Chai, and Supertest.
 
 **Example:**
 
+```
 const request = require('supertest');const app = require('./app');
 
 describe('GET /', function() {
@@ -868,6 +933,7 @@ request(app)
 });
 
 });
+```
 
 ### Node.js with Databases
 
@@ -875,6 +941,7 @@ request(app)
 
 **Answer:**
 
+```
 const mysql = require('mysql');const connection = mysql.createConnection({
 
 host: 'localhost',
@@ -904,6 +971,7 @@ console.log(results);
 });
 
 connection.end();
+```
 
 ### 40\. Explain how NoSQL databases like MongoDB can be used with Node.js
 
@@ -913,6 +981,7 @@ NoSQL databases like MongoDB can be used with Node.js using libraries like mongo
 
 **Example with Mongoose:**
 
+```
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/mydatabase', { useNewUrlParser: true, useUnifiedTopology: true });
@@ -936,6 +1005,7 @@ if (err) throw err;
 console.log('User saved successfully');
 
 });
+```
 
 ### 41\. What’s the role of ORM in Node.js?
 
@@ -945,6 +1015,7 @@ ORM (Object-Relational Mapping) tools in Node.js, like Sequelize for SQL databas
 
 **Example with Sequelize:**
 
+```
 const { Sequelize, DataTypes } = require('sequelize');const sequelize = new Sequelize('database', 'username', 'password', {
 
 host: 'localhost',
@@ -988,6 +1059,7 @@ age: 25
 console.log(jane.toJSON());
 
 });
+```
 
 ### Node.js Performance
 
@@ -1004,6 +1076,7 @@ Performance of a Node.js app can be monitored using tools like:
 
 **Example with** perf_hooks**:**
 
+```
 const { performance, PerformanceObserver } = require('perf_hooks');
 
 const obs = new PerformanceObserver((items) => {
@@ -1021,6 +1094,7 @@ performance.mark('A');doSomeLongRunningTask();
 performance.mark('B');
 
 performance.measure('A to B', 'A', 'B');
+```
 
 ### 43\. What is clustering in Node.js and how does it work?
 
@@ -1030,6 +1104,7 @@ Clustering allows you to create multiple instances of your Node.js application, 
 
 **Example:**
 
+```
 const cluster = require('cluster');const http = require('http');const numCPUs = require('os').cpus().length;
 
 if (cluster.isMaster) {
@@ -1057,6 +1132,7 @@ res.end('Hello, World!');
 }).listen(8000);
 
 }
+```
 
 ### 44\. How can you prevent memory leaks in a Node.js application?
 
@@ -1077,9 +1153,11 @@ The --inspect flag is used to enable the debugging protocol in Node.js. It allow
 
 **Example:**
 
+```
 bash
 
 node --inspect script.js
+```
 
 ### Concurrency in Node.js
 
@@ -1103,6 +1181,7 @@ Worker threads allow you to run JavaScript code in parallel threads, utilizing m
 
 **Example:**
 
+```
 const { Worker, isMainThread, parentPort } = require('worker_threads');
 
 if (isMainThread) {
@@ -1126,6 +1205,7 @@ parentPort.postMessage(msg + ' from Worker');
 });
 
 }
+```
 
 ### Node.js and Microservices
 
@@ -1137,6 +1217,7 @@ Node.js is often used in microservices architecture due to its lightweight, fast
 
 **Example:** In a microservices architecture, you might have a service that handles user authentication:
 
+```
 // authService.jsconst express = require('express');const app = express();const port = 3000;
 
 app.post('/login', (req, res) => {
@@ -1152,6 +1233,7 @@ app.listen(port, () => {
 console.log(\`Auth service listening at <http://localhost:${port}\`>);
 
 });
+```
 
 ### 50\. Explain inter-process communication in a Node.js microservice architecture
 
@@ -1161,6 +1243,7 @@ Inter-process communication (IPC) in a Node.js microservice architecture can be 
 
 **Example using HTTP:**
 
+```
 const axios = require('axios');
 
 // AuthService sends a request to UserService
@@ -1178,6 +1261,7 @@ console.log(response.data);
 console.error(error);
 
 });
+```
 
 ### Security in Node.js
 
@@ -1196,11 +1280,13 @@ Some common security best practices for Node.js applications include:
 
 **Example using** helmet**:**
 
+```
 const express = require('express');const helmet = require('helmet');
 
 const app = express();
 
 app.use(helmet());
+```
 
 ### 52\. How would you protect your Node.js application from XSS attacks?
 
@@ -1214,6 +1300,7 @@ To protect a Node.js application from XSS (Cross-Site Scripting) attacks:
 
 **Example:**
 
+```
 const express = require('express');const helmet = require('helmet');const validator = require('validator');
 
 const app = express();
@@ -1227,6 +1314,7 @@ const sanitizedInput = validator.escape(req.body.userInput);
 res.send(\`Sanitized input: ${sanitizedInput}\`);
 
 });
+```
 
 ### 53\. What are environment variables and how could you use them in Node.js?
 
@@ -1236,6 +1324,7 @@ Environment variables are variables outside the source code used to configure ap
 
 **Example using** dotenv**:**
 
+```
 1. Install dotenv:
 
 bash
@@ -1259,6 +1348,7 @@ require('dotenv').config();
 const dbHost = process.env.DB_HOST;const dbUser = process.env.DB_USER;const dbPass = process.env.DB_PASS;
 
 console.log(\`Connecting to database at ${dbHost} with user ${dbUser}\`);
+```
 
 ### Node.js and WebSockets
 
@@ -1270,6 +1360,7 @@ WebSockets provide a way to open a persistent, two-way communication channel bet
 
 **Example using** ws**:**
 
+```
 const WebSocket = require('ws');const server = new WebSocket.Server({ port: 8080 });
 
 server.on('connection', (ws) => {
@@ -1285,11 +1376,13 @@ ws.send(\`Hello, you sent -> ${message}\`);
 ws.send('Welcome to the WebSocket server');
 
 });
+```
 
 ### 55\. How do you set up a WebSocket server in Node.js?
 
 **Answer:**
 
+```
 To set up a WebSocket server in Node.js, you can use the ws library:
 
 1. Install ws:
@@ -1317,6 +1410,7 @@ ws.send('Welcome to the WebSocket server');
 });
 
 console.log('WebSocket server is running on ws://localhost:8080');
+```
 
 ### Node.js Deployment
 
@@ -1334,6 +1428,7 @@ Deploying a Node.js application in production involves several steps:
 
 **Example using PM2:**
 
+```
 bash
 
 npm install pm2 -g
@@ -1343,6 +1438,7 @@ pm2 start app.js
 pm2 startup
 
 pm2 save
+```
 
 ### 57\. What is PM2 and how is it used in Node.js?
 
@@ -1352,6 +1448,7 @@ PM2 is a production process manager for Node.js applications. It allows you to k
 
 **Example:**
 
+```
 bash
 
 npm install pm2 -g
@@ -1365,6 +1462,7 @@ pm2 stop app.js
 pm2 restart app.js
 
 pm2 delete app.js
+```
 
 ### 58\. Explain how you would use Docker with a Node.js application
 
@@ -1374,6 +1472,7 @@ Using Docker with a Node.js application involves creating a Dockerfile to define
 
 **Example:**
 
+```
 1. Create a Dockerfile:
 
 Dockerfile
@@ -1413,6 +1512,7 @@ bash
 docker build -t my-node-app .
 
 docker run -p 8080:8080 -d my-node-app
+```
 
 ### Node.js and Version Control
 
@@ -1424,6 +1524,7 @@ Managing versioning of a Node.js API can be done by including version numbers in
 
 **Example using URL versioning:**
 
+```
 const express = require('express');const app = express();
 
 app.get('/api/v1/users', (req, res) => {
@@ -1443,6 +1544,7 @@ app.listen(3000, () => {
 console.log('Server is running on port 3000');
 
 });
+```
 
 ### 60\. What are semantic versioning (semver) and its importance in Node.js development?
 
@@ -1462,11 +1564,11 @@ Semantic versioning (semver) is a versioning scheme that uses a three-part versi
 
 **Example:**
 
+```
 json
 
-{
-
-"version": "1.2.3"}
+{"version": "1.2.3"}
+```
 
 ### Node.js Advanced Topics
 
@@ -1478,6 +1580,7 @@ In Node.js, module.exports is the object that is actually returned as the result
 
 **Example:**
 
+```
 // module.jsmodule.exports = {
 
 greet: function() {
@@ -1491,6 +1594,7 @@ console.log('Hello');
 // app.jsconst myModule = require('./module');
 
 myModule.greet(); // Output: Hello
+```
 
 ### 62\. How can you create a simple TCP server in Node.js?
 
@@ -1500,6 +1604,7 @@ You can create a simple TCP server in Node.js using the net module.
 
 **Example:**
 
+```
 const net = require('net');
 
 const server = net.createServer((socket) => {
@@ -1525,6 +1630,7 @@ server.listen(3000, () => {
 console.log('TCP server is running on port 3000');
 
 });
+```
 
 ### 63\. What is REPL in Node.js?
 
@@ -1534,6 +1640,7 @@ REPL stands for Read-Eval-Print Loop. It is a command-line tool that evaluates J
 
 **Example:**
 
+```
 bash
 
 $ node
@@ -1545,6 +1652,7 @@ Hello, world!
 undefined
 
 \>
+```
 
 ### 64\. Explain the role of a reverse proxy with Node.js applications
 
@@ -1554,6 +1662,7 @@ A reverse proxy sits between client requests and the server, forwarding client r
 
 **Example using Nginx as a reverse proxy:**
 
+```
 nginx
 
 server {
@@ -1579,6 +1688,7 @@ proxy_cache_bypass $http_upgrade;
 }
 
 }
+```
 
 ### 65\. How do Node.js streams enhance performance?
 
@@ -1592,11 +1702,13 @@ Node.js streams are objects that allow you to read data from a source or write d
 
 **Example using a readable and writable stream:**
 
+```
 const fs = require('fs');
 
 const readableStream = fs.createReadStream('input.txt');const writableStream = fs.createWriteStream('output.txt');
 
 readableStream.pipe(writableStream);
+```
 
 These answers cover various aspects of Node.js, from core concepts to advanced topics, deployment strategies, and security best practices. Each example provides practical insights into implementing Node.js applications effectively.
 
@@ -1620,6 +1732,7 @@ Node.js has a rich ecosystem of frameworks and libraries that streamline develop
 
 **Example using Express.js:**
 
+```
 const express = require('express');const app = express();
 
 app.get('/', (req, res) => {
@@ -1633,6 +1746,7 @@ app.listen(3000, () => {
 console.log('Express server is running on port 3000');
 
 });
+```
 
 ### 67\. How is Koa different from Express.js?
 
@@ -1647,6 +1761,7 @@ Koa and Express.js are both Node.js web frameworks, but they differ in their des
 
 **Example using Koa:**
 
+```
 const Koa = require('koa');const app = new Koa();
 
 // Middleware
@@ -1662,6 +1777,7 @@ app.listen(3000, () => {
 console.log('Koa server is running on port 3000');
 
 });
+```
 
 ### 68\. What is NestJS and when would you choose it for your Node.js project?
 
@@ -1671,6 +1787,7 @@ NestJS is a framework for building efficient, scalable, and maintainable server-
 
 **Example using NestJS:**
 
+```
 typescript
 
 // main.tsimport { NestFactory } from '@nestjs/core';import { AppModule } from './app.module';
@@ -1682,6 +1799,7 @@ const app = await NestFactory.create(AppModule);
 await app.listen(3000);
 
 }bootstrap();
+```
 
 ### Integrations & Third-Party Node.js Modules
 
@@ -1693,6 +1811,7 @@ Integrating a Node.js app with a third-party API involves making HTTP requests u
 
 **Example using axios:**
 
+```
 const axios = require('axios');
 
 axios.get('<https://api.example.com/data>', {
@@ -1716,6 +1835,7 @@ console.log(response.data);
 console.error(error);
 
 });
+```
 
 ### 70\. What is Socket.IO and how does it work with Node.js?
 
@@ -1725,6 +1845,7 @@ Socket.IO is a library that enables real-time, bidirectional and event-based com
 
 **Example using Socket.IO:** Server-side:
 
+```
 const app = require('express')();const http = require('http').createServer(app);const io = require('socket.io')(http);
 
 io.on('connection', (socket) => {
@@ -1758,6 +1879,7 @@ socket.on('chat message', (msg) => {
 console.log('Received message:', msg);
 
 });&lt;/script&gt;
+```
 
 ### Node.js with Frontend Technologies
 
@@ -1769,6 +1891,7 @@ Node.js can serve as a backend for frontend frameworks like Angular or React by 
 
 **Example using Node.js with React:**
 
+```
 // Node.js backend serving React frontendconst express = require('express');const path = require('path');const app = express();
 
 // Serve static files from the React app
@@ -1798,6 +1921,7 @@ app.listen(port, () => {
 console.log(\`Node.js server is running on port ${port}\`);
 
 });
+```
 
 ### 72\. What is server-side rendering and how can it be achieved with Node.js?
 
@@ -1807,6 +1931,7 @@ Server-side rendering (SSR) is a technique where the server generates HTML for e
 
 **Example using Next.js (with Node.js):**
 
+```
 // pages/index.jsimport React from 'react';
 
 const Home = ({ data }) => (
@@ -1836,6 +1961,7 @@ return { props: { data } };
 }
 
 export default Home;
+```
 
 This example uses Next.js, a framework that integrates server-side rendering seamlessly with Node.js.
 
@@ -1858,6 +1984,7 @@ Server-side rendering (SSR) is a technique where web pages are rendered on the s
 
 **Example with Next.js:**
 
+```
 // pages/index.jsimport React from 'react';import fetch from 'isomorphic-unfetch';
 
 const Home = ({ data }) => (
@@ -1887,6 +2014,7 @@ return { props: { data } };
 }
 
 export default Home;
+```
 
 In this example, getServerSideProps is a Next.js function that runs on the server side to fetch data and pre-render the HTML with it.
 
@@ -1894,6 +2022,7 @@ In this example, getServerSideProps is a Next.js function that runs on the serve
 
 **Example with Express.js:**
 
+```
 // server.jsconst express = require('express');const React = require('react');const ReactDOMServer = require('react-dom/server');const App = require('./App');const fs = require('fs');
 
 const app = express();
@@ -1941,6 +2070,7 @@ app.listen(3000, () => {
 console.log('Server is running on port 3000');
 
 });
+```
 
 In this example, ReactDOMServer.renderToString is used to render the React component App to a string that is sent as the initial HTML response from the server.
 
@@ -1966,6 +2096,7 @@ Following coding conventions and best practices in Node.js ensures code quality,
 
 **Example of using async/await:**
 
+```
 // Asynchronous function with async/awaitasync function fetchData(url) {
 
 try {
@@ -1985,6 +2116,7 @@ throw error;
 }
 
 }
+```
 
 These practices ensure that Node.js applications are robust, maintainable, and scalable, aligning with industry standards and enhancing developer productivity.
 
@@ -2010,6 +2142,7 @@ Scaling Node.js applications involves handling increased load and maintaining pe
 
 **Example of horizontal scaling with load balancing:**
 
+```
 // Example using PM2 for clustering and load balancingconst http = require('http');const cluster = require('cluster');const numCPUs = require('os').cpus().length;const port = 3000;
 
 if (cluster.isMaster) {
@@ -2047,6 +2180,7 @@ res.end('Hello World\\n');
 console.log(\`Worker ${process.pid} started\`);
 
 }
+```
 
 This example demonstrates using Node.js's cluster module with http to create multiple worker processes (one per CPU core) to handle incoming HTTP requests, effectively scaling the application horizontally.
 
@@ -2074,6 +2208,7 @@ Following coding conventions and best practices in Node.js ensures code quality,
 
 **Example of using async/await:**
 
+```
 // Asynchronous function with async/awaitasync function fetchData(url) {
 
 try {
@@ -2093,6 +2228,7 @@ throw error;
 }
 
 }
+```
 
 These practices ensure that Node.js applications are robust, maintainable, and scalable, aligning with industry standards and enhancing developer productivity.
 
@@ -2118,6 +2254,7 @@ Scaling Node.js applications involves handling increased load and maintaining pe
 
 **Example of horizontal scaling with load balancing:**
 
+```
 // Example using PM2 for clustering and load balancingconst http = require('http');const cluster = require('cluster');const numCPUs = require('os').cpus().length;const port = 3000;
 
 if (cluster.isMaster) {
@@ -2155,6 +2292,7 @@ res.end('Hello World\\n');
 console.log(\`Worker ${process.pid} started\`);
 
 }
+```
 
 This example demonstrates using Node.js's cluster module with http to create multiple worker processes (one per CPU core) to handle incoming HTTP requests, effectively scaling the application horizontally.
 
@@ -2174,6 +2312,7 @@ Message queues are intermediary components that facilitate communication between
 
 **Example using RabbitMQ with Node.js:**
 
+```
 const amqp = require('amqplib/callback_api');
 
 // Connect to RabbitMQ server
@@ -2225,6 +2364,7 @@ process.exit(0);
 }, 500);
 
 });
+```
 
 In this example, Node.js uses the amqplib library to connect to RabbitMQ, declare a queue, and send a message. This demonstrates how message queues facilitate asynchronous communication in distributed systems.
 
@@ -2246,6 +2386,7 @@ Cloud platforms like AWS (Amazon Web Services), Azure (Microsoft), and GCP (Goog
 
 **Example using AWS Elastic Beanstalk for Node.js:**
 
+```
 yaml
 
 \# .ebextensions/nodejs-settings.configoption_settings:
@@ -2275,6 +2416,7 @@ NodeCommand: "npm start"
 }
 
 }
+```
 
 In this example, AWS Elastic Beanstalk is configured to deploy a Node.js application (nodejs-app) using npm start command to start the application (index.js using express framework).
 
@@ -2292,6 +2434,7 @@ Serverless architecture is a cloud computing execution model where cloud provide
 
 **Example using AWS Lambda with Node.js:**
 
+```
 // index.jsexports.handler = async (event) => {
 
 console.log('Received event:', JSON.stringify(event, null, 2));
@@ -2307,6 +2450,7 @@ body: JSON.stringify('Hello from Lambda and Node.js!'),
 return response;
 
 };
+```
 
 In this example, AWS Lambda is used with Node.js to create a serverless function (handler) that responds to events with a simple HTTP response.
 
@@ -2320,6 +2464,7 @@ Managing multiple Node.js versions on the same machine can be done using version
 
 **Using** nvm **(Node Version Manager):**
 
+```
 Install nvm:
 
 bash
@@ -2361,6 +2506,7 @@ Switch Node.js versions:
 bash
 
 n 14.17.1 # Use a specific version
+```
 
 These tools simplify managing multiple Node.js versions, allowing developers to work with different projects that require different Node.js versions on the same machine.
 
@@ -2372,6 +2518,7 @@ These tools simplify managing multiple Node.js versions, allowing developers to 
 
 **Example** .env **file:**
 
+```
 plaintext
 
 PORT=3000
@@ -2393,6 +2540,7 @@ console.log(\`Server is running on port ${port}\`);
 });
 
 // Accessing environment variablesconsole.log(process.env.DB_URI); // mongodb://localhost:27017/myappconsole.log(process.env.API_KEY); // abcdef123456
+```
 
 In this example, dotenv package is used to load variables from the .env file into process.env, making them accessible throughout the Node.js application.
 
@@ -2406,6 +2554,7 @@ REPL (Read-Eval-Print Loop) is a command-line tool that allows for interactive e
 
 **Using Node.js REPL:**
 
+```
 bash
 
 $ node
@@ -2429,6 +2578,7 @@ undefined
 20
 
 \> .exit
+```
 
 In this example, Node.js REPL is used to execute JavaScript statements interactively. It's useful for testing code snippets, debugging, and exploring Node.js APIs in real-time.
 
@@ -2446,6 +2596,7 @@ A reverse proxy is a server that sits between clients and backend servers (like 
 
 **Example using NGINX as a reverse proxy for Node.js:**
 
+```
 nginx
 
 \# nginx.conf
@@ -2473,6 +2624,7 @@ proxy_cache_bypass $http_upgrade;
 }
 
 }
+```
 
 In this example, NGINX is configured as a reverse proxy to forward HTTP requests to a Node.js application running on localhost:3000. NGINX handles load balancing, caching, and security-related tasks, improving the overall performance and reliability of the Node.js application.
 
@@ -2490,6 +2642,7 @@ Node.js streams are objects that enable efficient handling of data flow between 
 
 **Example using readable and writable streams:**
 
+```
 const fs = require('fs');
 
 // Readable streamconst readableStream = fs.createReadStream('input.txt', 'utf8');
@@ -2501,6 +2654,7 @@ const fs = require('fs');
 readableStream.pipe(writableStream);
 
 console.log('File is being processed...');
+```
 
 In this example, Node.js reads data from input.txt using a readable stream, processes it, and writes it to output.txt using a writable stream. This approach minimizes memory usage and improves performance when working with large files.
 
@@ -2514,6 +2668,7 @@ Socket.IO is a library that enables real-time, bidirectional communication betwe
 
 **Example using Socket.IO with Node.js:**
 
+```
 // server.jsconst express = require('express');const http = require('http');const socketIo = require('socket.io');
 
 const app = express();const server = http.createServer(app);const io = socketIo(server);
@@ -2543,6 +2698,7 @@ server.listen(3000, () => {
 console.log('Socket.IO server running on port 3000');
 
 });
+```
 
 In this example, Socket.IO is used with Node.js and Express to create a WebSocket server. It listens for connection events, handles disconnect events, and broadcasts chat message events to all connected clients in real-time.
 
@@ -2572,6 +2728,7 @@ Deploying a Node.js application in production involves several steps to ensure r
 
 **Example deployment using Heroku:**
 
+```
 Create a Procfile in the root directory:
 
 makefile
@@ -2589,6 +2746,7 @@ $ heroku login
 $ heroku create
 
 $ git push heroku main
+```
 
 Heroku automatically detects the Node.js application, installs dependencies from package.json, and starts the server specified in Procfile.
 
@@ -2607,6 +2765,7 @@ PM2 (Process Manager 2) is a popular process manager for Node.js applications th
 
 **Example usage of PM2:**
 
+```
 Install PM2 globally:
 
 bash
@@ -2624,6 +2783,7 @@ Monitor application logs and metrics:
 bash
 
 pm2 monit
+```
 
 PM2 simplifies managing Node.js applications in production by handling common tasks like process management, monitoring, and deployment, improving overall application reliability and uptime.
 
@@ -2637,6 +2797,7 @@ The config module in Node.js simplifies configuration management by loading conf
 
 **Example usage of** config **module:**
 
+```
 Install config module:
 
 bash
@@ -2652,6 +2813,7 @@ Create configuration files:
 Access configuration settings in Node.js application:
 
 // index.jsconst config = require('config');console.log(config.get('database.host')); // Access configuration value
+```
 
 In this example, config module loads environment-specific configuration settings (default.json, development.json, production.json) and allows accessing them using config.get() method.
 
@@ -2695,6 +2857,7 @@ Implementing microservices architecture with Node.js involves breaking down a mo
 
 **Example using Express.js for microservices:**
 
+```
 // service1.jsconst express = require('express');const app = express();const port = 3000;
 
 app.get('/', (req, res) => {
@@ -2722,6 +2885,7 @@ app.listen(port, () => {
 console.log(\`Service 2 listening at <http://localhost:${port}\`>);
 
 });
+```
 
 In this example, service1 and service2 are two independent microservices built using Express.js, each listening on different ports and handling their respective functionalities.
 
@@ -2743,6 +2907,7 @@ Unit testing in Node.js involves testing individual units (functions, modules) o
 
 **Example using Mocha and Chai for unit testing:**
 
+```
 // app.jsfunction addNumbers(a, b) {
 
 return a + b;
@@ -2780,6 +2945,7 @@ expect(result).to.be.NaN;
 });
 
 });
+```
 
 In this example, Mocha is used as the testing framework, and Chai is used for assertions (expect assertions). Unit tests are written to validate the addNumbers function's behavior for different input scenarios.
 
@@ -2799,6 +2965,7 @@ Integration testing in Node.js involves testing the interaction between multiple
 
 **Example using** supertest **for API integration testing:**
 
+```
 // app.jsconst express = require('express');const app = express();
 
 app.get('/api/users', (req, res) => {
@@ -2834,6 +3001,7 @@ expect(response.body\[1\].name).toBe('Bob');
 });
 
 });
+```
 
 In this example, supertest is used for integration testing an Express.js application (app.js) by sending HTTP requests (GET /api/users) and asserting the expected responses.
 
@@ -2847,6 +3015,7 @@ Event emitters in Node.js are objects that emit named events and allow functions
 
 **Example using** EventEmitter **in Node.js:**
 
+```
 const EventEmitter = require('events');
 
 // Create an event emitter instanceconst myEmitter = new EventEmitter();
@@ -2868,6 +3037,7 @@ myEmitter.emit('myEvent'); // Output: Event occurred
 // Remove event listener
 
 myEmitter.off('myEvent', eventHandler);
+```
 
 In this example, EventEmitter is used to create an event emitter instance (myEmitter), define an event handler (eventHandler), attach the handler to the myEvent event using on(), emit the event using emit(), and remove the event handler using off().
 
@@ -2879,6 +3049,7 @@ Clustering in Node.js involves spawning multiple Node.js processes (workers) to 
 
 **Example using** cluster **module in Node.js:**
 
+```
 const cluster = require('cluster');const http = require('http');const numCPUs = require('os').cpus().length;
 
 if (cluster.isMaster) {
@@ -2916,6 +3087,7 @@ res.end('Hello World\\n');
 console.log(\`Worker ${process.pid} started\`);
 
 }
+```
 
 In this example, Node.js's cluster module is used to create multiple worker processes (numCPUs) that share the same server port (8000) using http module, effectively utilizing multiple CPU cores for handling incoming HTTP requests.
 
@@ -2927,6 +3099,7 @@ Child processes in Node.js allow running system commands or scripts from within 
 
 **Example using** child_process **module in Node.js:**
 
+```
 const { exec } = require('child_process');
 
 exec('ls -l', (error, stdout, stderr) => {
@@ -2950,6 +3123,7 @@ return;
 console.log(\`Command output: ${stdout}\`);
 
 });
+```
 
 In this example, the exec function from child_process module is used to execute a system command (ls -l), capture the command output (stdout), handle errors (stderr), and print the command output to the console.
 
@@ -2981,12 +3155,15 @@ Connecting MongoDB with Node.js involves using MongoDB drivers (e.g., mongodb, m
 
 **Install MongoDB driver:**
 
+```
 bash
 
 npm install mongodb
+```
 
 **Connect to MongoDB:**
 
+```
 const { MongoClient } = require('mongodb');const uri = 'mongodb://localhost:27017';const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 async function connect() {
@@ -3006,9 +3183,11 @@ console.error('Error connecting to MongoDB:', error);
 }
 
 connect();
+```
 
 **Perform database operations:**
 
+```
 async function readData() {
 
 const database = client.db('mydb');
@@ -3022,6 +3201,7 @@ console.log('Users:', users);
 }
 
 readData();
+```
 
 In this example, mongodb driver is used to connect to MongoDB (localhost:27017), read data from users collection in mydb database, and print the retrieved user data.
 
@@ -3041,6 +3221,7 @@ Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js that p
 
 **Example using Mongoose with Node.js:**
 
+```
 const mongoose = require('mongoose');const { Schema } = mongoose;
 
 mongoose.connect('mongodb://localhost:27017/mydb', { useNewUrlParser: true, useUnifiedTopology: true })
@@ -3068,6 +3249,7 @@ user.save()
 .then(() => console.log('User saved:', user))
 
 .catch((error) => console.error('Error saving user:', error));
+```
 
 In this example, Mongoose is used to connect to MongoDB (mydb database), define a User model using userSchema, create a new User document, and save it to MongoDB collection (users).
 
@@ -3079,6 +3261,7 @@ Implementing pagination in Node.js with MongoDB involves using MongoDB's skip() 
 
 **Example using pagination in Node.js with MongoDB:**
 
+```
 const express = require('express');const { MongoClient } = require('mongodb');
 
 const app = express();const port = 3000;const uri = 'mongodb://localhost:27017';const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -3134,6 +3317,7 @@ app.listen(port, () => {
 console.log(\`Server is running on port ${port}\`);
 
 });
+```
 
 In this example, an Express.js server connects to MongoDB (mydb database), exposes an API endpoint (GET /api/users) for pagination, retrieves users from users collection based on page and limit query parameters using skip() and limit() methods, and returns paginated user data as JSON response.
 
@@ -3145,6 +3329,7 @@ Implementing transactions in Node.js with MongoDB involves using session and sta
 
 **Example using transactions in Node.js with MongoDB:**
 
+```
 const { MongoClient } = require('mongodb');const uri = 'mongodb://localhost:27017';const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Connect to MongoDBasync function connect() {
@@ -3200,5 +3385,6 @@ session.endSession();
 }
 
 performTransaction();
+```
 
 In this example, MongoDB transaction is implemented using session, startSession(), commitTransaction(), and abortTransaction() methods to insert a new User document into users collection and a new Order document into orders collection within a transactional context, ensuring both operations are atomic and consistent.
